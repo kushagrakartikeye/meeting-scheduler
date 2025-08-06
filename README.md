@@ -1,5 +1,11 @@
 # 📅 Meeting Scheduler App
 
+![Node.js](https://img.shields.io/badge/Node.js-16+-green)
+![React](https://img.shields.io/badge/React-18-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://meeting-scheduler-backend-ten.vercel.app)
+
 **Live Demo:** [https://meeting-scheduler-backend-ten.vercel.app](https://meeting-scheduler-backend-ten.vercel.app)
 
 ---
@@ -10,10 +16,14 @@
 * [Features](#features)
 * [Tech Stack](#tech-stack)
 * [Getting Started](#getting-started)
+* [Usage](#usage)
 * [Environment Variables](#environment-variables)
 * [Scripts](#scripts)
 * [Folder Structure](#folder-structure)
 * [Deployment](#deployment)
+* [Authentication Flow](#authentication-flow)
+* [Contributing](#contributing)
+* [Future Plans](#future-plans)
 * [Contact](#contact)
 
 ---
@@ -33,7 +43,7 @@
 * 🔐 User Registration & Login with JWT
 * 🗓 CRUD operations for meetings
 * 👥 Join meetings and RSVP
-* 🗕 View upcoming meetings
+* 📅 View upcoming meetings
 * 🔔 Real-time notifications & reminders
 * 🌙 Responsive dark-themed UI
 * 📊 MongoDB integration with advanced schema
@@ -91,6 +101,17 @@ Visit **[http://localhost:5000](http://localhost:5000)**
 
 ---
 
+## ▶️ Usage
+
+* Register or Login to your account.
+* Create a new meeting with date, time, and participants.
+* Share meeting ID with participants.
+* RSVP or join meetings from the dashboard.
+
+(Add screenshots or GIF demo here)
+
+---
+
 ## 🔑 Environment Variables
 
 | Variable    | Description                        |
@@ -135,7 +156,36 @@ Deployed as a single app on **Vercel**, removing CORS and multi-URL issues.
 
 ---
 
-## 📬m Contact
+## 🔐 Authentication Flow
+
+* Users register/login using email and password.
+* JWT tokens issued on successful login.
+* Protected routes include:
+
+  * `/api/meetings` (CRUD for meetings)
+  * `/api/auth` (Login/Signup)
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Added feature"`.
+4. Push to branch: `git push origin feature-name`.
+5. Open a Pull Request.
+
+---
+
+## 🛠 Future Plans
+
+* Add video conferencing integration.
+* Calendar sync with Google Calendar.
+* Push notifications for upcoming meetings.
+
+---
+
+## 📬 Contact
 
 Open an issue on [GitHub](https://github.com/kushagrakartikeye/meeting-scheduler) or contact the maintainer.
 
