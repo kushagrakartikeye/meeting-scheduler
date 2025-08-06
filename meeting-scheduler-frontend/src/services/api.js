@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+// IMPORTANT: No trailing slash!
+const API_URL = 'https://meeting-scheduler-backend-kc4v0wwh5-kushagrakartikeyes-projects.vercel.app/api';
 
 // Create axios instance
 const api = axios.create({
