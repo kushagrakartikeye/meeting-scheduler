@@ -1,0 +1,5 @@
+node_modules/
+.env
+meeting-scheduler-frontend/node_modules/
+meeting-scheduler-frontend/dist/
+*.log
