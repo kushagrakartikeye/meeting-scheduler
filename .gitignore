@@ -3,3 +3,4 @@ node_modules/
 meeting-scheduler-frontend/node_modules/
 meeting-scheduler-frontend/dist/
 *.log
+.vercel

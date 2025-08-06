@@ -4,7 +4,20 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+// Fix CORS for production
+app.use(cors({
+  origin: [
+    'http://localhost:5173', 
+    'http://localhost:3000',
+    'https://meeting-scheduler-frontend-khyvywn7f.vercel.app',
+    'https://meeting-scheduler-frontend-m0ekpe2nc.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 // Import routes
@@ -14,6 +27,16 @@ const meetingRoutes = require('./routes/meetings');
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/meetings', meetingRoutes);
+
+// Add a test endpoint for debugging
+app.get('/api/test', (req, res) => {
+  res.json({
+    message: 'Backend API is working!',
+    mongoConnected: !!process.env.MONGO_URI,
+    jwtSecret: !!process.env.JWT_SECRET,
+    timestamp: new Date().toISOString()
+  });
+});
 
 const PORT = process.env.PORT || 5000;
 
